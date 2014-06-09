@@ -15,5 +15,9 @@
     "app/libs",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "modernizr": "~2.8.2",
+    "selectivizr": "~1.0.2"
+  }
 }
