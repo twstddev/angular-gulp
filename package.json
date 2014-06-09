@@ -12,6 +12,9 @@
     "gulp": "~3.7.0",
     "gulp-load-plugins": "~0.5.1",
     "gulp-load": "~0.1.1",
-    "run-sequence": "~0.3.6"
+    "run-sequence": "~0.3.6",
+    "connect-livereload": "~0.4.0",
+    "tiny-lr": "0.0.7",
+    "express": "~4.4.1"
   }
 }
