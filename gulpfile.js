@@ -40,6 +40,7 @@ gulp.loadTasks( __dirname );
 gulp.task( "development", function( done ) {
 	run_sequence(
 		"livereload",
+		"open",
 		done
 	);
 } );
