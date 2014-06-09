@@ -39,6 +39,7 @@ gulp.loadTasks( __dirname );
 
 gulp.task( "development", function( done ) {
 	run_sequence(
+		"clean:build",
 		"compass:build",
 		"livereload",
 		"open",
@@ -48,6 +49,8 @@ gulp.task( "development", function( done ) {
 
 gulp.task( "default", function( done ) {
 	run_sequence(
+		"clean:build",
+		"clean:dist",
 		"compass:dist",
 		done
 	);
