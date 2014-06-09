@@ -39,8 +39,16 @@ gulp.loadTasks( __dirname );
 
 gulp.task( "development", function( done ) {
 	run_sequence(
+		"compass:build",
 		"livereload",
 		"open",
+		done
+	);
+} );
+
+gulp.task( "default", function( done ) {
+	run_sequence(
+		"compass:dist",
 		done
 	);
 } );
