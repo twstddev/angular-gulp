@@ -6,8 +6,8 @@ module.exports = function( gulp ) {
 	gulp.task( "karma:test", function() {
 		karma_config.action = "run";
 
-		return gulp.src( "test" )
-			.pipe( plugins.karma( karma.config ) )
+		gulp.src( "test" )
+			.pipe( plugins.karma( karma_config ) )
 			.on( "error", function( error ) {
 				throw error;
 			} );
