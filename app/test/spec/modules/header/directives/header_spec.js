@@ -1,13 +1,12 @@
-define( [ "angular-mocks" ], function() {
-	//beforeEach( function( done ) {
-		//require( [ "js/modules/header/main" ], function() {
-			//done();
-		//} );
-	//} );
+describe( "HeaderDirective", function() {
+	beforeEach( function( done ) {
+		console.log( done );
+		require( [ "angular-mocks" ], function() {
+			console.log( "suka" );
+			done();
+		} );
+	} );
 
-	//describe( "HeaderDirective", function() {
-		//it( "adds h1 title as a provided attribute", function() {
-
-		//} );
-	//} );
+	it( "adds h1 title as a provided attribute", function() {
+	} );
 } );
