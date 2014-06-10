@@ -19,6 +19,8 @@
   "dependencies": {
     "modernizr": "~2.8.2",
     "selectivizr": "~1.0.2",
-    "requirejs": "~2.1.14"
+    "requirejs": "~2.1.14",
+    "jquery": "1.*",
+    "jquery-migrate": "~1.2.1"
   }
 }
