@@ -16,7 +16,7 @@ module.exports = function( gulp ) {
 	gulp.task( "karma:watch", function() {
 		karma_config.action = "watch";
 
-		gulp.src( "test" )
+		gulp.src( "test/*" )
 			.pipe( plugins.karma( karma_config ) );
 	} );
 }

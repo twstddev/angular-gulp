@@ -19,7 +19,8 @@ require.config({
   paths : {
 	  "jquery" : "libs/jquery/dist/jquery",
 	  "jquery-migrate" : "libs/jquery-migrate/jquery-migrate",
-	  "angular" : "libs/angular/angular"
+	  "angular" : "libs/angular/angular",
+	  "angular-mocks" : "libs/angular-mocks/angular-mocks"
   },
 
   shims : {
@@ -33,7 +34,12 @@ require.config({
 	"angular" : {
 		deps : [ "jquery" ],
 		exports : "angular"
+	},
+	"angular-mocks" : {
+		deps : [ "angular" ],
+		exports : "angular.mock"
 	}
+	//priority : [ "angular" ]
   },
 
 
@@ -43,3 +49,4 @@ require.config({
   // we have to kickoff jasmine, as it is asynchronous
   callback: window.__karma__.start
 });
+
