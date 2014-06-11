@@ -4,7 +4,11 @@
  * It bootstraps angular framework and loads 
  * application modules.
  */
-define( [ "angular", "js/modules/header/main" ],
+define( [ 
+	"angular",
+	"js/modules/header/main",
+	"js/modules/footer/main",
+	],
 	function() {
 	// private scope
 	var m_angular_app = null;
@@ -21,7 +25,10 @@ define( [ "angular", "js/modules/header/main" ],
 	 * @brief Creates angular module named "app".
 	 */
 	var createAngularApp = function( config ) {
-		m_angular_app = angular.module( "app", [ "header" ] );
+		m_angular_app = angular.module( "app", [
+			"header",
+			"footer"
+		] );
 	}
 
 	/**

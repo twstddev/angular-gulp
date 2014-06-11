@@ -1,1 +1,2 @@
-angular.module("templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("templates/modules/header/header.html","<header>\n	<h1 data-ng-bind=\"title\">\n	</h1>\n</header>\n");}]);
+angular.module("templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("templates/modules/footer/footer.html","<footer>\n	<p>\n		Copyright goes here\n	</p>\n</footer>\n");
+$templateCache.put("templates/modules/header/header.html","<header>\n	<h1 data-ng-bind=\"title\">\n	</h1>\n</header>\n");}]);
