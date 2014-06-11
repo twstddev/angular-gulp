@@ -6,7 +6,7 @@ define( [], function() {
 	var NavigationItemDirective = {
 		restrict : "A",
 		scope : false,
-		require : "^ngNavigation",
+		require : [ "^ngNavigation", "?ngRepeat" ],
 		templateUrl : "templates/modules/navigation/navigation_item.html",
 		replace : true
 	};

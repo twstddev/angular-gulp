@@ -6,6 +6,7 @@ define( [], function() {
 	var NavigationDirective = {
 		restrict : "A",
 		scope : false,
+		controller : "NavigationController", 
 		templateUrl : "templates/modules/navigation/navigation.html",
 		replace : true
 	};
