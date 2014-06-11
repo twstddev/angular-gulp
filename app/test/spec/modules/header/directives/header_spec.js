@@ -1,22 +1,24 @@
-describe( "HeaderDirective", function() {
-	var $compile = null;
-	var $rootScope = null;
+define( [ "js/modules/header/main" ], function() {
+	describe( "HeaderDirective", function() {
+		var element = null;
+		var scope = null;
 
-	beforeEach( function( done ) {
-		require( [ "angular-mocks" ], function() {
-			require( [ "js/modules/header/main" ], function() {
-				module( "header" );
+		beforeEach( module( "header" ) );
 
-				inject( function( _$compile_, _$rootScope_ ) {
-					$compile = _$compile_;
-					$rootScope = _$rootScope_;
-				} );
+		beforeEach( inject( function( $compile, $rootScope ) {
+			var template = $compile( "<div data-ng-header></div>" );
+			scope = $rootScope;
+			element = template( scope );
+		} ) );
 
-				done();
-			} );
+		it( "adds h1 title as a provided attribute", function() {
+			var custom_title = "My website";
+
+			expect( element.find( "h1" ).length ).toEqual( 1 );
+
+			scope.mainTitle = custom_title;
+			scope.$digest();
+			expect( element.find( "h1" ).html() ).toEqual( custom_title );
 		} );
-	} );
-
-	it( "adds h1 title as a provided attribute", function() {
 	} );
 } );

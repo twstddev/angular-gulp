@@ -15,11 +15,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      {pattern: 'test-main.js', included: true},
-      {pattern: 'libs/jquery/dist/jquery.js', included: false},
-      {pattern: 'libs/angular/angular.js', included: false},
-      {pattern: 'libs/angular-mocks/angular-mocks.js', included: false},
-      {pattern: 'config/**/*.js', included: false},
+      {pattern: 'test-main.js'},
+      {pattern: 'config/require-config.js', included: false},
+	  {pattern: 'libs/**/*.js', included: false},
       {pattern: 'js/**/*.js', included: false},
       {pattern: 'test/**/*.js', included: false},
     ],
@@ -30,6 +28,7 @@ module.exports = function(config) {
       '**/*.swp',
       '**/.keep',
       'js/main.js',
+	  "libs/selectivizr/**/*.js"
     ],
 
 
