@@ -41,6 +41,7 @@ gulp.task( "development", function( done ) {
 	run_sequence(
 		"clean:build",
 		"compass:build",
+		"angular-templates",
 		"karma:watch",
 		"livereload",
 		"open",
