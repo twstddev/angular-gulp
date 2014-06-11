@@ -12,6 +12,8 @@ module.exports = function( gulp ) {
 	};
 
 	gulp.task( "angular-templates", function() {
-		return compile_angular_templates();
+		compile_angular_templates();
+
+		gulp.watch( template_files, compile_angular_templates );
 	} );
 }
