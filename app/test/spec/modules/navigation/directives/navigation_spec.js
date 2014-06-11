@@ -19,7 +19,7 @@ define( [ "js/modules/navigation/main" ], function() {
 		beforeEach( inject( function( $compile, $rootScope ) {
 			var template = $compile( "<div data-ng-navigation></div>" );
 			$scope = $rootScope;
-			$scope.items = items;
+			$scope.items = angular.copy( items );
 
 			element = template( $scope );
 			$scope.$digest();
@@ -50,7 +50,7 @@ define( [ "js/modules/navigation/main" ], function() {
 		} );
 
 		it( "makes item active on navigation", function() {
-			element.find( "li" ).eq( 0 ).click();
+			element.find( "li" ).eq( 0 ).children( "a" ).click();
 
 			expect( element.find( "li" ).eq( 0 ).hasClass( "active" ) ).toBeTruthy();
 		} );
