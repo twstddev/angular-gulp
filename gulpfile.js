@@ -48,9 +48,13 @@ gulp.task( "development", function( done ) {
 	);
 } );
 
-gulp.task( "test", [
-	"karma:test"
-] );
+gulp.task( "test", function( done ) {
+	run_sequence(
+		"angular-templates",
+		"karma:watch",
+		done
+	);
+} );
 
 gulp.task( "default", function( done ) {
 	run_sequence(

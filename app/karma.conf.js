@@ -19,7 +19,7 @@ module.exports = function(config) {
       {pattern: 'config/require-config.js', included: false},
 	  {pattern: 'libs/**/*.js', included: false},
       {pattern: 'js/**/*.js', included: false},
-      {pattern: 'test/**/*.js', included: false},
+      {pattern: 'test/**/*.js', included: false}
     ],
 
 
@@ -42,8 +42,6 @@ module.exports = function(config) {
 		type : "html",
 		dir : "coverage/"
 	},
-
-
 
     // test results reporter to use
     // possible values: 'dots', 'progress'

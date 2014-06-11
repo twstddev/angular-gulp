@@ -17,15 +17,17 @@ require( [ "/base/config/require-config.js" ], function() {
 		baseUrl : "/base",
 
 		paths : {
-			"angular-mocks" : "libs/angular-mocks/angular-mocks"
+			"angular-mocks" : "libs/angular-mocks/angular-mocks",
+			"templates" : "js/templates"
 		},
 
 		shim : {
-			"angular-mocks" : [ "angular" ]
+			"angular-mocks" : [ "angular" ],
+			"templates" : [ "angular" ]
 		}
 	} );
 
-	require( [ "angular-mocks" ], function() {
+	require( [ "angular-mocks", "templates" ], function() {
 		require.config( {
 			deps : allTestFiles,
 			callback : window.__karma__.start
