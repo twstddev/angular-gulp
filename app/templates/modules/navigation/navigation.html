@@ -1,6 +1,9 @@
 <nav>
 	<ul>
-		<li data-ng-repeat="item in items" data-ng-navigation-item>
+		<li 
+			data-ng-repeat="item in items"
+			data-ng-navigation-item
+			ng-click="processItem( item )">
 		</li>
 	</ul>
 </nav>

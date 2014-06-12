@@ -2,6 +2,8 @@ define( [ "js/modules/navigation/main" ], function() {
 	describe( "NavigationDirective", function() {
 		var element = null;
 		var $scope = null;
+		var $location = null;
+
 		var items = [
 			{
 				title : "Home",
@@ -16,13 +18,15 @@ define( [ "js/modules/navigation/main" ], function() {
 		beforeEach( module( "templates" ) );
 		beforeEach( module( "navigation" ) );
 
-		beforeEach( inject( function( $compile, $rootScope ) {
-			var template = $compile( "<div data-ng-navigation></div>" );
-			$scope = $rootScope;
-			$scope.items = angular.copy( items );
+		beforeEach( inject( function( $compile, $rootScope, _$location_ ) {
+			$location = _$location_;
 
-			element = template( $scope );
-			$scope.$digest();
+			var template = $compile( "<div data-ng-navigation ng-controller=\"NavigationController\"></div>" );
+			//$scope = $rootScope;
+			element = template( $rootScope );
+			element.scope().items = angular.copy( items );
+			element.scope().$digest();
+			//$scope.$digest();
 		}) );
 
 
@@ -31,20 +35,20 @@ define( [ "js/modules/navigation/main" ], function() {
 		} );
 
 		it( "adds a new item to the list", function() {
-			$scope.items.push( {
+			element.scope().items.push( {
 				title : "Gallery",
 				url : "gallery"
 			} );
 
-			$scope.$digest();
+			element.scope().$digest();
 
 			expect( element.find( "li" ).length ).toEqual( items.length + 1 );
 		} );
 
 		it( "removes an item from the list", function() {
-			$scope.items.pop();
+			element.scope().items.pop();
 
-			$scope.$digest();
+			element.scope().$digest();
 
 			expect( element.find( "li" ).length ).toEqual( items.length - 1 );
 		} );
@@ -53,6 +57,12 @@ define( [ "js/modules/navigation/main" ], function() {
 			element.find( "li" ).eq( 0 ).children( "a" ).click();
 
 			expect( element.find( "li" ).eq( 0 ).hasClass( "active" ) ).toBeTruthy();
+		} );
+
+		it( "changes location on item click", function() {
+			element.find( "li" ).eq( 0 ).find( "a" ).click();
+
+			expect( $location.path() ).toEqual( items[ 0 ].url );
 		} );
 	} );
 } );
