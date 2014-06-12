@@ -5,13 +5,17 @@
 Main classes.
 */
 section {
-	/*@include transition( opacity 1s ease, transform 1s ease );*/
 	padding: 5em 0;
-	opacity: 1;
 
-	&.show {
+	&.ng-enter {
+		@include transition( opacity 1s ease, transform 1s ease );
 		opacity: 0;
 		@include transform( translate3d( 0, 20%, 0 ) );
+	}
+
+	&.ng-enter.ng-enter-active {
+		opacity: 1;
+		@include transform( translate3d( 0, 0, 0 ) );
 	}
 }
 
