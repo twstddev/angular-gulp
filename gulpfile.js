@@ -65,6 +65,9 @@ gulp.task( "default", function( done ) {
 		"angular-templates",
 		"imagemin",
 		"usemin",
+		"htmlmin",
+		"cssmin",
+		"scripts",
 		done
 	);
 } );
