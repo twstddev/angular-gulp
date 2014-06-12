@@ -62,6 +62,8 @@ gulp.task( "default", function( done ) {
 		"clean:build",
 		"clean:dist",
 		"compass:dist",
+		"angular-templates",
+		"imagemin",
 		done
 	);
 } );
