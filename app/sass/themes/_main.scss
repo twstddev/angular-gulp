@@ -5,10 +5,11 @@
 Main classes.
 */
 section {
-	@include transition( opacity 1s ease, transform 1s ease );
+	/*@include transition( opacity 1s ease, transform 1s ease );*/
 	padding: 5em 0;
+	opacity: 1;
 
-	&.hidden {
+	&.show {
 		opacity: 0;
 		@include transform( translate3d( 0, 20%, 0 ) );
 	}
