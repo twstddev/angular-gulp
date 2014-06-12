@@ -8,6 +8,7 @@ define( [
 	"angular",
 	"js/modules/header/main",
 	"js/modules/footer/main",
+	"js/modules/pages/main",
 	"js/include/helpers/main"
 	],
 	function() {
@@ -28,7 +29,8 @@ define( [
 	var createAngularApp = function( config ) {
 		m_angular_app = angular.module( "app", [
 			"header",
-			"footer"
+			"footer",
+			"pages"
 		] )
 			.config( [ "$locationProvider", function( $locationProvider ) {
 				$locationProvider.html5Mode( true );
