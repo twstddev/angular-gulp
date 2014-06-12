@@ -7,6 +7,7 @@
 define( [ 
 	"angular",
 	"angular-animate",
+	"angular-templates",
 	"js/modules/header/main",
 	"js/modules/footer/main",
 	"js/modules/pages/main",
@@ -32,7 +33,8 @@ define( [
 			"header",
 			"footer",
 			"pages",
-			"ngAnimate"
+			"ngAnimate",
+			"templates"
 		] )
 			.config( [ "$locationProvider", function( $locationProvider ) {
 				$locationProvider.html5Mode( true );

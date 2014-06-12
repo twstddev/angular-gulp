@@ -5,7 +5,8 @@ require.config( {
 		"jquery-migrate" : "libs/jquery-migrate/jquery-migrate",
 		"angular" : "libs/angular/angular",
 		"angular-ui-router" : "libs/angular-ui-router/release/angular-ui-router",
-		"angular-animate" : "libs/angular-animate/angular-animate"
+		"angular-animate" : "libs/angular-animate/angular-animate",
+		"angular-templates" : "js/templates"
 	},
 
 	shim : {
@@ -21,6 +22,7 @@ require.config( {
 			exports : "angular"
 		},
 		"angular-ui-router" : [ "angular" ],
-		"angular-animate" : [ "angular" ]
+		"angular-animate" : [ "angular" ],
+		"angular-templates" : [ "angular" ]
 	}
 } );
