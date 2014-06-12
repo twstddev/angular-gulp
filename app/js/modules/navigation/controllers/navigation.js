@@ -3,17 +3,8 @@ define( [], function() {
 	 * @brief Implements controller that handles navigation
 	 * items.
 	 */
-	var NavigationController = function( $scope, $location, LocationHelper ) {
-		$scope.items = [
-			{
-				title : "Home",
-				url : "/"
-			},
-			{
-				title : "About",
-				url : "about"
-			}
-		];
+	var NavigationController = function( $scope, $location, LocationHelper, MenuItemsResource ) {
+		$scope.items = MenuItemsResource.query();
 
 		/**
 		 * @brief Takes an item and fires navigation event
@@ -32,5 +23,10 @@ define( [], function() {
 		}
 	};
 
-	return [ "$scope", "$location", "LocationHelper", NavigationController ];
+	return [
+		"$scope",
+		"$location",
+		"LocationHelper",
+		"MenuItemsResource",
+		NavigationController ];
 } );

@@ -18,15 +18,26 @@ define( [ "js/modules/navigation/main" ], function() {
 		beforeEach( module( "templates" ) );
 		beforeEach( module( "navigation" ) );
 
-		beforeEach( inject( function( $compile, $rootScope, _$location_ ) {
-			$location = _$location_;
+		beforeEach( inject( function( $compile,
+			$rootScope,
+			_$location_,
+			$controller ) {
 
-			var template = $compile( "<div data-ng-navigation ng-controller=\"NavigationController\"></div>" );
-			//$scope = $rootScope;
-			element = template( $rootScope );
-			element.scope().items = angular.copy( items );
-			element.scope().$digest();
-			//$scope.$digest();
+			$location = _$location_;
+			$scope = $rootScope;
+
+			var navigation_controller = $controller( "NavigationController", {
+				$scope : $scope
+			} );
+
+
+			var template = $compile( "<div data-ng-navigation></div>" );
+
+			$scope.items = angular.copy( items );
+
+			element = template( $scope );
+
+			$scope.$digest();
 		}) );
 
 
