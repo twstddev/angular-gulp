@@ -29,7 +29,10 @@ define( [
 		m_angular_app = angular.module( "app", [
 			"header",
 			"footer"
-		] );
+		] )
+			.config( [ "$locationProvider", function( $locationProvider ) {
+				$locationProvider.html5Mode( true );
+			} ] );
 	}
 
 	/**
