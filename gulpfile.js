@@ -64,6 +64,7 @@ gulp.task( "default", function( done ) {
 		"compass:dist",
 		"angular-templates",
 		"imagemin",
+		"usemin",
 		done
 	);
 } );
