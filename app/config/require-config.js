@@ -3,7 +3,8 @@ require.config( {
 	paths : {
 		"jquery" : "libs/jquery/dist/jquery",
 		"jquery-migrate" : "libs/jquery-migrate/jquery-migrate",
-		"angular" : "libs/angular/angular"
+		"angular" : "libs/angular/angular",
+		"angular-ui-router" : "libs/angular-ui-router/release/angular-ui-router"
 	},
 
 	shim : {
@@ -17,6 +18,7 @@ require.config( {
 		"angular" : {
 			deps : [ "jquery" ],
 			exports : "angular"
-		}
+		},
+		"angular-ui-router" : [ "angular" ]
 	}
 } );
