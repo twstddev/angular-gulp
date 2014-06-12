@@ -3,7 +3,7 @@ define( [], function() {
 	 * @brief Implements controller that handles navigation
 	 * items.
 	 */
-	var NavigationController = function( $scope, $location ) {
+	var NavigationController = function( $scope, $location, LocationHelper ) {
 		$scope.items = [
 			{
 				title : "Home",
@@ -23,10 +23,14 @@ define( [], function() {
 			$location.path( item.url );
 		}
 
-		// listen to URL changes and mark item as the current one
-		$scope.$on( "$locationChangeSuccess", function() {
-		} );
+		/**
+		 * @brief Checks whether the given item
+		 * is the current location item.
+		 */
+		$scope.isCurrent = function( item ) {
+			return LocationHelper.comparePaths( $location.path(), item.url );
+		}
 	};
 
-	return [ "$scope", "$location", NavigationController ];
+	return [ "$scope", "$location", "LocationHelper", NavigationController ];
 } );

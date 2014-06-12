@@ -3,6 +3,7 @@
 		<li 
 			data-ng-repeat="item in items"
 			data-ng-navigation-item
+			ng-class="{ active : isCurrent( item ) }"
 			ng-click="processItem( item )">
 		</li>
 	</ul>

@@ -7,7 +7,8 @@
 define( [ 
 	"angular",
 	"js/modules/header/main",
-	"js/modules/footer/main"
+	"js/modules/footer/main",
+	"js/include/helpers/main"
 	],
 	function() {
 	// private scope
